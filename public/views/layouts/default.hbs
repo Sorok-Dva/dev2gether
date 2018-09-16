@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description"
+              content=""/>
+        <meta name="author" content="Allods Nova Team"/>
+
+        <!-- meta facebook -->
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="">
+        <meta property="og:description"
+              content=""/>
+        <title>Dev2Gether</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700%7cMarcellus+SC" rel="stylesheet">
+        <style>
+            html,body{
+                height: 100%
+            }
+            #wrap {
+                min-height: -webkit-calc(100% - 100px);     /* Chrome */
+                min-height: -moz-calc(100% - 100px);     /* Firefox */
+                min-height: calc(100% - 100px);     /* native */
+            }
+            footer {
+                position: relative;
+                clear:both;
+            }
+            .page-wrapper {
+                padding: 15px;
+                background-color: #fff;
+                /*height: 100vh;*/
+            }
+        </style>
+        <script src="/static/vendors/tether/dist/js/tether.min.js"></script>
+        <script src="/static/vendors/jquery/dist/jquery.min.js"></script>
+        <script src="/static/js/jquery-ui.min.js"></script>
+        <script src="/static/vendors/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+        <script src="/static/vendors/remarkable-bootstrap-notify/dist/bootstrap-notify.js"></script>
+        <script src="/static/vendors/moment/moment.js"></script>
+    </head>
+
+    <body>
+        {{> header}}
+
+        <div id="wrap">
+            <div class="container clear-top">
+                <div class="col-md-12">
+                    {{#if success_msg}}
+                        <div class="alert alert-success" style="margin-top: 100px;">{{success_msg}}</div>
+                    {{/if}}
+                    {{#if error_msg}}
+                        <div class="alert alert-danger" style="margin-top: 100px;">{{error_msg}}</div>
+                    {{/if}}
+                    {{#if error}}
+                        <div class="alert alert-danger" style="margin-top: 75px;">{{error}}</div>
+                    {{/if}}
+                </div>
+            </div>
+            {{{body}}}
+        </div>
+
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Dev2Gether 2018</p>
+            </div>
+        </footer>
+        {{> modals }}
+        {{> scripts }}
+    </body>
+</html>

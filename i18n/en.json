@@ -1,0 +1,53 @@
+{
+  "layouts": {
+    "default": {
+      "footer_visitors": "visitors"
+    },
+    "landing": {
+      "header_h1_text": "Welcome to Dev2Gether"
+    },
+    "admin": {
+    }
+  },
+  "partials": {
+    "header": {
+      "li_item_contact": "Contact",
+      "li_item_register": "Register",
+      "li_item_login": "Login",
+      "li_item_logout": "Logout"
+    },
+    "scripts": {
+      "notify_error_title": "Error",
+      "notify_success_title": "Success"
+    }
+  },
+  "pages": {
+    "index": {
+
+    },
+    "login": {
+      "title_card_header": "Log in",
+      "form_email_label": "E-mail address",
+      "form_email_ph": "Your e-mail address",
+      "form_password_label": "Password",
+      "form_password_ph": "Your Password",
+      "form_submit_btn_loading_text": "Connection in progress",
+      "form_submit_btn": "Login"
+    },
+    "register": {
+      "title_card_header": "Register",
+      "card-lead": "",
+      "form_first_name_label": "First Name",
+      "form_first_name_label_ph": "Your first name",
+      "form_last_name_label": "Last Name",
+      "form_last_name_label_ph": "Your last name",
+      "form_email_label": "E-mail address",
+      "form_email_muted": "We'll never share your email with anyone else.",
+      "form_email_ph": "Your e-mail address",
+      "form_password_label": "Password",
+      "form_password_ph": "Your Password",
+      "form_submit_btn_loading_text": "Registration in progress",
+      "form_submit_btn": "Register"
+    }
+  }
+}

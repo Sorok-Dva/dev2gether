@@ -1,0 +1,8 @@
+/.gtm
+/.nyc_output
+/assets
+/coverage
+/docs
+/i18n
+/node_modules
+/public
