@@ -42,16 +42,15 @@ User.ensureIsAdmin = (req, res, next) => {
 User.createUser = async (user, cb) => {
   user.created_at = new Date();
   user.validated = false;
-  user.role = 'User';
-  user.key = sha1(md5(user.lastName) + md5(user.email));
+  user.key = sha1(md5(user.nickname) + md5(user.email));
+  // user.role = user.isDev ? 'developer' : 'user';
 
   bcrypt.genSalt(10).then(salt => {
     bcrypt.hash(user.password, salt).then(hash => {
       mysql.insert({
         into: 'users',
         data: {
-          firstName: user.firstName,
-          lastName: user.lastName,
+          nickname: user.nickname,
           email: user.email,
           password: hash,
           createdAt: user.created_at,
@@ -60,10 +59,7 @@ User.createUser = async (user, cb) => {
           key: user.key
         }
       }).then(result => cb(result, user.key, null))
-        .catch(error => {
-          if (error.code === 'ER_DUP_ENTRY')
-          { return cb(null, null, error) }
-        });
+        .catch(error => cb(null, null, error));
     });
   });
 };
