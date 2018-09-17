@@ -16,6 +16,14 @@
         <title>Dev2Gether</title>
 
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700%7cMarcellus+SC" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/lux.min.css">
+        <link rel="stylesheet" href="/static/vendors/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/vendors/ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="/static/vendors/datetimepicker/build/jquery.datetimepicker.min.css" type="text/css">
+        <link rel="stylesheet" href="/static/css/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="/static/css/jquery-ui/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="/static/css/jquery-ui/jquery-ui.theme.min.css">
+        <link rel="stylesheet" href="/static/css//scrolling-nav.css">
         <style>
             html,body{
                 height: 100%
@@ -59,9 +67,12 @@
                     {{#if error}}
                         <div class="alert alert-danger" style="margin-top: 75px;">{{error}}</div>
                     {{/if}}
+                    {{#each errors as |error|}}
+                        <div class="alert alert-danger" style="margin-top: 75px;">{{error.msg}}</div>
+                    {{/each}}
                 </div>
+                {{{body}}}
             </div>
-            {{{body}}}
         </div>
 
         <footer class="py-5 bg-dark">

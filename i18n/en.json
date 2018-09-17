@@ -37,17 +37,23 @@
     "register": {
       "title_card_header": "Register",
       "card-lead": "",
-      "form_first_name_label": "First Name",
-      "form_first_name_label_ph": "Your first name",
-      "form_last_name_label": "Last Name",
-      "form_last_name_label_ph": "Your last name",
+      "form_nickname_label": "Nickname",
+      "form_nickname_ph": "Your nickname",
       "form_email_label": "E-mail address",
       "form_email_muted": "We'll never share your email with anyone else.",
       "form_email_ph": "Your e-mail address",
       "form_password_label": "Password",
       "form_password_ph": "Your Password",
       "form_submit_btn_loading_text": "Registration in progress",
-      "form_submit_btn": "Register"
+      "form_submit_btn": "Register",
+      "errors": {
+        "empty_nickname": "You must choose a nickname.",
+        "empty_email": "You must specify a valid email address.",
+        "email_not_matches": "Emails doesn't matches.",
+        "invalid_email": "Invalid email.",
+        "empty_password": "Password cannot be empty.",
+        "password_not_matches": "Password doesn't matches."
+      }
     }
   }
 }

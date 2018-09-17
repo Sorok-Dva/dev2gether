@@ -26,36 +26,34 @@ IndexController.getHome = (req, res) => res.render('index');
 
 IndexController.postRegister = (req, res) => {
   let email = req.body.email,
-    firstName = req.body.firstName,
-    lastName = req.body.lastName,
+    nickname = req.body.nickname,
     password = req.body.password,
     repeatPass = req.body.passwordRepeat,
     ip = req.ip
     ;
 
-    // NEED TO CREATE i18n VAR BEFORE USING REQ BODY VALIDATION
-    /*    req.checkBody('email', req.i18n_texts.register.error.EMPTY_MAIL).notEmpty();
-        req.checkBody('email', req.i18n_texts.register.error.INVALID_MAIL).isEmail();
-        req.checkBody('email', req.i18n_texts.register.error.MAIL_NOT_MATCHES).equals(repeatEmail);
-        req.checkBody('password', req.i18n_texts.register.error.EMPTY_PASSWORD).notEmpty();
-        req.checkBody('password', req.i18n_texts.register.error.PASSWORDS_NOT_MATCHES).equals(repeatPass); */
-    /*
+  req.checkBody('nickname', req.i18n_texts.pages.register.errors.empty_nickname).notEmpty();
+  req.checkBody('email', req.i18n_texts.pages.register.errors.empty_email).notEmpty();
+  req.checkBody('email', req.i18n_texts.pages.register.errors.invalid_email).isEmail();
+  // req.checkBody('email', req.i18n_texts.pages.register.errors.email_not_matches).equals(repeatEmail);
+  req.checkBody('password', req.i18n_texts.pages.register.errors.empty_password).notEmpty();
+  // req.checkBody('password', req.i18n_texts.pages.register.errors.password_not_matches).equals(repeatPass);
 
-        let errors = req.validationErrors();
-    */
+  let errors = req.validationErrors();
 
-    /* if (errors) {
-        return res.status(200).json({errors});
-    } else { */
-  User.createUser({email, firstName, lastName, password}, (result, key, err) => {
-    if (!err && result) {
-      res.redirect('login');
-    } else if (err.errno === 1062) {
-      console.log(err);
-      res.render('register', {body: req.body, error_msg: err.sqlMessage})
-    }
-  })
-  // }
+  if (errors) {
+    res.render('register', {body: req.body, errors})
+  } else {
+    User.createUser({email, nickname, password}, (result, key, err) => {
+      if (!err && result) {
+        res.redirect('login');
+      } else if (err.errno === 1062) {
+        res.render('register', {body: req.body, error_msg: err.sqlMessage})
+      } else {
+        console.log(err);
+      }
+    });
+  }
 };
 
 IndexController.postLogin = (req, res) => {

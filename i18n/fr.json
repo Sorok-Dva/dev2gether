@@ -27,26 +27,32 @@
     "login": {
       "title_card_header": "Connexion",
       "form_email_label": "Adresse e-mail",
-      "form_email_php": "Votre adresse e-mail",
+      "form_email_ph": "Votre adresse e-mail",
       "form_password_label": "Mot de passe",
-      "form_password_php": "Votre mot de passe",
+      "form_password_ph": "Votre mot de passe",
       "form_submit_btn_loading_text": "Connexion en cours",
       "form_submit_btn": "Connexion"
     },
     "register": {
       "title_card_header": "Inscription",
       "card-lead": "Inscrivez vous sur Dev2Gether !",
-      "form_first_name_label": "Prénom",
-      "form_first_name_label_ph": "Votre prénom",
-      "form_last_name_label": "Nom",
-      "form_last_name_label_ph": "Votre nom",
+      "form_nickname_label": "Nom d'utilisateur",
+      "form_nickname_ph": "Votre pseudo",
       "form_email_label": "Adresse e-mail",
       "form_email_muted": "Nous ne partagerons jamais votre email avec quiconque.",
-      "form_email_php": "Votre adresse e-mail",
+      "form_email_ph": "Votre adresse e-mail",
       "form_password_label": "Mot de passe",
-      "form_password_php": "Votre mot de passe",
+      "form_password_ph": "Votre mot de passe",
       "form_submit_btn_loading_text": "Validation de l'inscription",
-      "form_submit_btn": "S'inscrire"
+      "form_submit_btn": "S'inscrire",
+      "errors": {
+        "empty_nickname": "Vous devez choisir un nom d'utilisateur.",
+        "empty_email": "Votre devez spécifier une adresse email valide.",
+        "email_not_matches": "Les emails ne correspondent pas.",
+        "invalid_email": "Email invalide.",
+        "empty_password": "Le mot de passe ne peut pas être vide.",
+        "password_not_matches": "Les mots de passes ne correspondent pas."
+      }
     }
   }
 }
