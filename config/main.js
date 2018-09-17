@@ -7,7 +7,7 @@ const killServer = () => {
 };
 
 module.exports = {
-  'roles': ['admin'],
+  'roles': ['founder', 'admin', 'dev'],
   __d: e => console.log('%s %s', chalk.yellow('[DEBUG]'), chalk.hex('#000').bgYellow(e)),
   __i: e => console.log('%s %s', chalk.green('[INFO]'), chalk.hex('#000').bgGreen(e)),
   __l: e => console.log('%s %s', chalk.cyan('[MySQL LOGGER]'), chalk.cyan(e)),
@@ -15,5 +15,6 @@ module.exports = {
   __e: (e, kill) => {
     console.log('%s %s', chalk.red('[ERROR]'), chalk.hex('#000').bgRed(e));
     if (kill) killServer();
-  }
+  },
+  slufigy: text => text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')
 };
