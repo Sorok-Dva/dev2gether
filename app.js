@@ -137,6 +137,7 @@ if (app.get('env') === 'development') {
 // ------ ROUTES
 app.use('/', require('./routes/index'));
 app.use('/user', require('./routes/user'));
+app.use('/ideas', require('./routes/idea'));
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500);

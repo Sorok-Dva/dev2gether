@@ -1,0 +1,30 @@
+<div class="container" style="margin-top:50px;">
+    <div class="row justify-content-center">
+        <div class="card border-success mb-3 align-self-center" style="width:30rem">
+            <div class="card-header">Add idea</div>
+            <div class="card-body">
+                <form class="form-horizontal" action="/ideas/add" method="post">
+                    <div class="form-group">
+                        <label class="col-md-12 control-label" for="title">Idea Title</label>
+                        <div class="col-md-12">
+                            <input id="title" name="title" type="text" placeholder="IDEA TITLE" class="form-control input-md" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12 control-label" for="text">Idea Content</label>
+                        <div class="col-md-12">
+                            <textarea name="text" id="text" cols="30" rows="10" class="form-control" required=""></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12 control-label" for="tags">TAGS</label>
+                        <div class="col-md-12">
+                            <input id="tags" name="tags" type="text" placeholder="Tags separated with comma" class="form-control input-md" required="">
+                        </div>
+                    </div>
+                    <button class="btn btn-success btn-loader float-md-right" type="submit" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Creating Idea">Create Idea</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
