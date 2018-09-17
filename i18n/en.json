@@ -14,7 +14,8 @@
       "li_item_contact": "Contact",
       "li_item_register": "Register",
       "li_item_login": "Login",
-      "li_item_logout": "Logout"
+      "li_item_logout": "Logout",
+      "li_item_addIdea": "Add an Idea"
     },
     "scripts": {
       "notify_error_title": "Error",
@@ -53,6 +54,13 @@
         "invalid_email": "Invalid email.",
         "empty_password": "Password cannot be empty.",
         "password_not_matches": "Password doesn't matches."
+      }
+    },
+    "ideas": {
+      "errors": {
+        "empty_title": "You must specify a title",
+        "empty_idea": "Your idea cannot be blank",
+        "empty_tags": "You must specify at least one tag"
       }
     }
   }

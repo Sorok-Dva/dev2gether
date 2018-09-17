@@ -14,7 +14,8 @@
       "li_item_contact": "Contact",
       "li_item_register": "S'enregister",
       "li_item_login": "Connexion",
-      "li_item_logout": "Déconnexion"
+      "li_item_logout": "Déconnexion",
+      "li_item_addIdea": "Proposer une idée"
     },
     "scripts": {
       "notify_error_title": "Erreur",
@@ -52,6 +53,13 @@
         "invalid_email": "Email invalide.",
         "empty_password": "Le mot de passe ne peut pas être vide.",
         "password_not_matches": "Les mots de passes ne correspondent pas."
+      }
+    },
+    "ideas": {
+      "errors": {
+        "empty_title": "Vous devez spécifier un titre.",
+        "empty_idea": "Votre idée ne peut être vide.",
+        "empty_tags": "Vous devez spécifier au moins un tag."
       }
     }
   }
