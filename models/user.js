@@ -8,31 +8,22 @@ const config = require('../config/main');
 const User = {};
 
 User.ensureNotAuthenticated = (req, res, next) => {
-  if (!req.isAuthenticated()) {
-    return next();
-  } else {
-    req.flash('error_msg', 'You are already logged in');
-    res.redirect('/');
-  }
+  if (!req.isAuthenticated()) return next();
+  req.flash('error_msg', 'You are already logged in.');
+  res.redirect('/');
 };
 
 User.ensureAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    return next();
-  } else {
-    req.flash('error_msg', 'You are not logged');
-    res.redirect('/');
-  }
+  if (req.isAuthenticated()) return next();
+  req.flash('error_msg', 'You are not logged.');
+  res.redirect('/');
 };
 
 User.ensureIsAdmin = (req, res, next) => {
   if (req.isAuthenticated()) {
-    if (config.roles.includes(req.user.role)) {
-      next();
-    } else {
-      req.flash('error_msg', 'You\'re not allowed to access this content. This incident will be reported.');
-      res.redirect('/');
-    }
+    if (['founder', 'admin'].includes(req.user.role)) return next();
+    req.flash('error_msg', 'You\'re not allowed to access this content. This incident will be reported.');
+    res.redirect('/');
   } else {
     req.flash('error_msg', 'You are not logged');
     res.redirect('/');
